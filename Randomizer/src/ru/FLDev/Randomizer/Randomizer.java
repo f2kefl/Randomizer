@@ -39,7 +39,7 @@ public class Randomizer {
 				  GridBagConstraints.NORTH, new Insets (5, 5, 5, 5), 0, 0));
 		
 		label.setFont(font);
-		label.setForeground(Color.BLACK);		
+		label.setForeground(Color.GRAY);		
 		
 		list = (List<String>) SerializationManager.deSerializeData("list", "ser", "");
 		
@@ -67,7 +67,7 @@ public class Randomizer {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {				
 				
-				fl.setName(JOptionPane.showInputDialog("¬ведите название фильма"));
+				fl.setName(JOptionPane.showInputDialog("Input the new movie title"));
 				if(!(list.contains(fl.name))){
 					if(!(fl.name.equals(""))){
 						list.add(fl.name);
@@ -86,7 +86,7 @@ public class Randomizer {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				int reply = JOptionPane.showConfirmDialog(null, "”далить этот фильм?", "", JOptionPane.YES_NO_OPTION);
+				int reply = JOptionPane.showConfirmDialog(null, "Delete this movie from list?", "", JOptionPane.YES_NO_OPTION);
 				if(reply == JOptionPane.YES_OPTION){	
 					list.remove(label.getText());
 					label.setText("");
